@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/codemirror.js"></script>
+<link rel="stylesheet" href="lib/codemirror.css">
+<script src="mode/javascript/javascript.js"></script>
+<script src="mode/htmlmixed/htmlmixed.js"></script>
+<script src="mode/xml/xml.js"><!-- needed for htmlmixed --></script>
+<script src="mode/css/css.js"></script>
+</head>
+<body>
+<form>
+<legend>JS</legend>
+<fieldset>
+<textarea id="jsCode">function myScript(){return 100;}</textarea>
+</fieldset>
+</form>
+<button type="button" onclick="MyFunc(document.getElementById('jsCode').value)">Convert</button>
+<p id="demo"></p>
+<script>
+window.onload = function () {
+    CodeMirror.fromTextArea(document.getElementById('jsCode'), {mode: 'javascript', lineNumbers:true})
+};
+function MyFunc(val) {
+	// body...
+	
+
+}
+</script>
+</body>
+</html>
